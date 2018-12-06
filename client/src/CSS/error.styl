@@ -1,0 +1,43 @@
+@import "./helpStyles/variables.styl"
+.title
+    display grid
+    place-items center
+    font-size 10em
+    letter-spacing 2vw
+    text-align center
+    width 100%
+    font-family Roboto, Arial, Helvetica, sans-serif
+    font-weight 200
+    position relative 
+    left 1%
+    padding 20px
+.sub-title
+    padding 20px
+    border-top 1px solid #000000
+    letter-spacing 3vw
+    text-align center
+    position relative 
+    left 3%
+p 
+    font-size 1.2em
+    font-family Roboto, Arial, Helvetica, sans-serif
+
+.btn-link
+    display block
+    margin 40px auto
+    background tabColor
+    padding 15px 
+    border 1px solid #000
+    color #FFF
+    font-size 1.2em
+    width 20%
+    border-radius 50px
+    transition .5s ease-in
+    &:hover
+        background headerColor
+        color #FFF
+        transition .5s ease-in
+
+@media screen and (max-width 768px) 
+    .btn-link
+        width 100%

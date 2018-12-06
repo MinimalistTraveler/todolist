@@ -1,0 +1,67 @@
+@import "../CSS/helpStyles/mixins.styl"
+.login-form
+    border-right 1px solid #000
+    padding-right 50px
+    margin-bottom 20px
+
+.form-input
+    formInput()
+
+.input-label
+    formLabel()
+
+.form-title
+    formTitle()
+.w50 
+    margin 0 auto !important
+    width 80% !important
+.errorInput
+    border-color  #e60000 !important;
+
+.form-btn-wrap
+    display flex
+    flex-wrap: wrap
+    button
+        flex-basis: 100%
+    a
+        flex-basis 100%
+    span
+        margin 0 auto
+        padding 20px
+        width 100%
+        text-align: center
+        font-size 1.2em
+        letter-spacing: 1.2vw
+        &::before, &::after
+            content: ""
+            display block
+            background #000000
+            height 1px
+            width 100%
+            margin 20px auto
+.banner
+    position relative
+    width 100%
+    height 100%
+    display flex
+    align-items: center
+    justify-content: center
+    h1 
+        font-family: Roboto, Arial, Helvetica, sans-serif;
+        font-weight: 200
+        font-size 4em
+        text-align: center
+        color #333
+        padding 20px
+        animation fadeIn 2s
+@media only screen and (max-width: 992px)
+    .login-form
+        border-right: none
+        padding 15px
+        
+
+@keyframes fadeIn 
+    from 
+        opacity 0
+    to 
+        opacity 1

@@ -1,0 +1,73 @@
+@import "./helpStyles/mixins.styl"
+@import "./helpStyles/variables.styl"
+.input-label
+    formLabel()
+.todo-card
+    background #f4f4f4
+    padding 20px
+    flex-basis 100%
+    text-align left
+    margin 5px
+    font-weight 200;
+    font-family Roboto, Arial, Helvetica, sans-serif !important
+    transition all .5s
+    &:hover
+        box-shadow 0px 0px 10px rgba(#000, .5)
+        transition all .5s
+.todo-container
+    display flex
+    flex-wrap wrap
+    justify-content center
+    position relative
+    .button-wrap
+        position relative
+        top 0
+        right 5%
+        display flex
+        flex-wrap wrap 
+        flex-basis 40%
+        justify-content flex-end
+    span 
+        padding 10px
+        background tabColor
+        color #FFF
+        flex-basis 10%
+        display grid
+        place-items center
+        &:hover
+            cursor pointer
+            background #000
+.title
+    font-family Roboto, Arial, Helvetica, sans-serif
+    font-weight 200
+    border-bottom 1px solid #000000
+    padding 10px
+    text-align left
+    font-size 3em
+    margin-bottom 20px
+    padding 20px
+.todo-title
+    flex-basis 40%
+    font-family Roboto, Arial, Helvetica, sans-serif !important 
+    color #000
+    font-weight 200
+.edit-input
+    display flex
+    flex-wrap wrap
+    h3 
+        flex-basis 100%
+        font-family Roboto, Arial, Helvetica, sans-serif
+        font-style italic
+        font-size 15px
+        font-weight 400
+@media screen and (max-width 769px)
+    .todo-container
+        .button-wrap
+            position static
+            flex-basis 100%
+            a
+                flex-basis 100% !important
+            span 
+                flex-basis 100% !important
+                margin 5px
+                padding 10px

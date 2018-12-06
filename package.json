@@ -1,0 +1,42 @@
+{
+  "name": "simple_todo",
+  "version": "1.0.0",
+  "description": "Simple todo app",
+  "main": "server.js",
+  "author": "Erik Bridges",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon server.js --exec babel-node",
+    "build": "concurrently \"nodemon server.js --exec babel-node \" \" npm run build --prefix client\"",
+    "start": "concurrently \"nodemon server.js --exec babel-node\" \"npm run start --prefix client\""
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.1.0",
+    "bcrypt": "^3.0.2",
+    "concurrently": "^4.0.1",
+    "cors": "^2.8.4",
+    "dotenv": "^6.1.0",
+    "jsonwebtoken": "^8.3.0",
+    "knex": "^0.15.2",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.6.0",
+    "query-string": "^6.2.0",
+    "restify": "^7.2.2",
+    "restify-cors-middleware": "^1.1.1",
+    "restify-errors": "^6.1.1",
+    "restify-router": "^0.5.1",
+    "shortid": "^2.2.14",
+    "superagent": "^4.0.0-beta.5",
+    "validator": "^10.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.1.4",
+    "eslint-plugin-react": "^7.11.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.4"
+  }
+}

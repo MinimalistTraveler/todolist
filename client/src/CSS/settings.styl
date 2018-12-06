@@ -1,0 +1,24 @@
+@import "./helpStyles/mixins.styl"
+@import "./helpStyles/variables.styl"
+.settings-panel
+    position relative
+    display block
+    width 100%
+    height 100px
+    &:before
+        content "Settings"
+        padding 30px
+        border-top-right-radius 20px
+        border-bottom-right-radius 20px
+        position absolute
+        top 0
+        left 0%
+        background cardColor
+        display block
+        color #FFF
+        font-weight 300
+        font-size 2em
+        font-family Roboto, Arial, Helvetica, sans-serif
+        
+.form-label
+    formLabel()
