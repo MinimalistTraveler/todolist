@@ -1,6 +1,6 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const ExtractCssChunks = require("extract-css-chunks-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "JS/main_bundle.js",
-    publicPath: "/"
+    publicPath: "./"
   },
   devServer: {
     port: 3000,
@@ -19,11 +19,7 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
+      new TerserPlugin({ parallel: true }),
       new OptimizeCSSAssetsPlugin({
         cssProcessor: require("cssnano"),
         cssProcessorPluginOptions: {
@@ -45,7 +41,7 @@ module.exports = {
       minify: true
     }),
     new ExtractCssChunks({
-      filename: "./CSS/styles.css",
+      filename: "CSS/styles.css",
       hot: true,
       orderWarning: true,
       reloadAll: true,
