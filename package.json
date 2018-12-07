@@ -10,7 +10,7 @@
     "build": "npm run build --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client --only=dev && npm install --prefix client && npm run build --prefix client",
     "dev": "concurrently \"nodemon server.js --exec babel-node\" \"npm run start --prefix client\"",
-    "start": "node server"
+    "start": "npm run server"
   },
   "dependencies": {
     "@babel/preset-env": "^7.1.0",
