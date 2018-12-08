@@ -5,7 +5,7 @@ This is a simple todo list app build under react using webpack on the front end.
 - Create and register a new user
 - Login and Logout feature
 - Edit your account
-- Delete your account (Not Finished Yet.)
+- Delete your account
 - Create multiple todolists and create a collection of items in each of them.
 - Delete a todolist along with the items
 
