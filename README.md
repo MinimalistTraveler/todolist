@@ -1,6 +1,6 @@
 # Simple Todo App
 
-This is a simple todo list app build under react using webpack on the front end. Nodejs with restify auto generated from babel from the back end. Styling was created using stylus and semantic ui. This web app allows you to
+This is a simple todo list app build under react using webpack on the front end. Nodejs with restify in the back end. Styling was created using stylus and semantic ui. This web app allows you to
 
 - Create and register a new user
 - Login and Logout feature
