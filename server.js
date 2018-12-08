@@ -1,27 +1,37 @@
-import restify from "restify";
-import mainRouter from "./routes/routes";
-import corsMiddleware from "restify-cors-middleware";
-const PORT = process.env.PORT || 5000;
+"use strict";
 
-const server = restify.createServer({
+require("@babel/polyfill");
+
+var _restify = _interopRequireDefault(require("restify"));
+
+var _routes = _interopRequireDefault(require("./server/routes/routes"));
+
+var _restifyCorsMiddleware = _interopRequireDefault(require("restify-cors-middleware"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PORT = process.env.PORT || 5000;
+
+var server = _restify.default.createServer({
   name: "Todolist App"
-});
-// CORS
-const cors = corsMiddleware({
+}); // CORS
+
+
+var cors = (0, _restifyCorsMiddleware.default)({
   preflightMaxAge: 5,
   origins: ["http://localhost:5000/", "http://localhost:3000"],
   allowHeaders: ["API-Token", "Authorization"],
   exposeHeaders: ["API-Token-Expiry"]
 });
-
 server.pre(cors.preflight);
-server.use(cors.actual);
-// API ROUTER
-mainRouter.applyRoutes(server, "/api");
+server.use(cors.actual); // API ROUTER
 
-// Plugins
+_routes.default.applyRoutes(server, "/api"); // Plugins
 
-server.use(restify.plugins.bodyParser());
-server.use(restify.plugins.queryParser());
-// Listening
-server.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+
+server.use(_restify.default.plugins.bodyParser());
+server.use(_restify.default.plugins.queryParser()); // Listening
+
+server.listen(PORT, function () {
+  return console.log("Listening on port ".concat(PORT));
+});

@@ -6,13 +6,13 @@
   "author": "Erik Bridges",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js --exec babel-node",
+    "start": "node server.js",
+    "build-server": "babel src -d dist",
     "build": "npm run build --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client --only=dev && npm install --prefix client && npm run build --prefix client",
-    "dev": "concurrently \"nodemon server.js --exec babel-node\" \"npm run start --prefix client\""
+    "dev": "concurrently \"nodemon server.js \" \"npm run start --prefix client\""
   },
   "dependencies": {
-    "@babel/preset-env": "^7.1.0",
     "bcrypt": "^3.0.2",
     "concurrently": "^4.0.1",
     "cors": "^2.8.4",
@@ -32,8 +32,11 @@
     "validator": "^10.8.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.0",
     "@babel/core": "^7.1.2",
     "@babel/node": "^7.2.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.2.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^7.1.4",
     "eslint-plugin-react": "^7.11.1",
