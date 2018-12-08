@@ -6,7 +6,7 @@
   "author": "Erik Bridges",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
+    "start": "node -r esm server.js",
     "build-server": "babel src -d dist",
     "build": "npm run build --prefix client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client --only=dev && npm install --prefix client && npm run build --prefix client",
@@ -17,6 +17,7 @@
     "concurrently": "^4.0.1",
     "cors": "^2.8.4",
     "dotenv": "^6.1.0",
+    "esm": "^3.0.84",
     "jsonwebtoken": "^8.3.0",
     "knex": "^0.15.2",
     "passport": "^0.4.0",
@@ -32,11 +33,6 @@
     "validator": "^10.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.0",
-    "@babel/core": "^7.1.2",
-    "@babel/node": "^7.2.0",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.2.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^7.1.4",
     "eslint-plugin-react": "^7.11.1",
