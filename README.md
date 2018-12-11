@@ -9,4 +9,4 @@ This is a simple todo list app build under react using webpack on the front end.
 - Create multiple todolists and create a collection of items in each of them.
 - Delete a todolist along with the items
 
-Feel free to use this on new or existing projects if you like. Be sure to credit me please :)
+Feel free to use this on new or existing projects if you like. Credit is needed.
